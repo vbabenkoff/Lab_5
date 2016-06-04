@@ -1,0 +1,39 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+#define SIZE 24
+
+int main() {
+    int mas[SIZE][SIZE];
+    int m, n;
+	
+    for(m = 0; m < SIZE ; m++){
+		for ( n = 0; n < SIZE; n++){
+	        if(m <= n)
+			mas[m][n] = 1;
+		    else
+			mas[m][n] = 0;
+		}
+	}
+	for(m = 0; m < SIZE; m++){
+		for ( n = 0; n < SIZE; n++){
+		    if(m >= SIZE - n)
+			mas[m][n] = 0;
+		}
+	}
+	
+	for(m = 0; m < SIZE; m++){
+		for ( n = 0; n < SIZE; n++){
+		    if((m > n) && (m >= SIZE - n))
+			mas[m][n] = 1;
+		}
+	}
+
+	for(m = 0; m < SIZE; m++){
+		for(n = 0; n < SIZE; n++)
+		printf("%3d", mas[m][n]);
+		printf("\n");
+	}
+	
+	return 0;
+}
