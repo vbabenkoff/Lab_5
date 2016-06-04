@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+	int mas[24][24];
+    int m, n;
+	
+	for(m = 0; m < 24 ; m++){
+		for ( n = 0; n < 24; n++){
+			if(m >= n)
+			mas[m][n] = 1;
+			else
+			mas[m][n] = 0;
+		}
+	}
+
+	
+	for(m = 0; m < 24; m++){
+		for(n = 0; n < 24; n++)
+		printf("%3d", mas[m][n]);
+		printf("\n");
+	}
+	
+	return 0;
+}
